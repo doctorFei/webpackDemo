@@ -1,8 +1,14 @@
 {
-  "presets": ["@babel/preset-env","@vue/babel-preset-jsx"],
+  "presets": [
+    [
+      "@babel/preset-env",
+      { "modules": false } // treeShaking
+    ],
+    "@vue/babel-preset-jsx"
+  ],
   "plugins": [
-    "@babel/transform-runtime",
-    "@babel/plugin-syntax-dynamic-import",
+    "@babel/transform-runtime", //Babel 在每个文件都插入了辅助代码，使代码体积过大.使用 webpack.ProvidePlugin 来配置 shimming 的常用方法将没有作用
+    "@babel/plugin-syntax-dynamic-import", // 动态导入
     "@babel/plugin-proposal-class-properties" // 用来编译类(class)
   ]
 }

@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <div class="demo">{{message}}</div>
-    <img src="./assets/simple.png" alt />
+    <img style="width:200px;height:200px" src="./assets/simple.png" alt />
   </div>
 </template>
 <script>
 import { add } from "@/utils/tool";
+// import(/* webpackPrefetch: true */ 'LoginModal');
 export default {
   async mounted() {
     const res = await add();
